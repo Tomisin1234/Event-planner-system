@@ -110,7 +110,7 @@ public class Main {
                 "E003",
                 "Lagos Sport Event",
                 "Teslim Balogun Stadium, Surulere",
-                LocalDate.of(2025, 9, 20),
+                LocalDate.of(2026, 9, 20),
                 LocalTime.of(15, 0),
                 5000.00,
                 1000
