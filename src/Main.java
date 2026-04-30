@@ -13,7 +13,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // ── Pre-load the 3 default Lagos events ───────────────────
+
         ArrayList<Event> events = new ArrayList<>();
 
         events.add(new Event(
@@ -44,7 +44,7 @@ public class Main {
                 1000
         ));
 
-        // ── Main app loop ──────────────────────────────────────────
+
         boolean running = true;
 
         while (running) {
@@ -73,7 +73,7 @@ public class Main {
                 // ══════════════════════════════════════════════════
                 case 1 -> {
 
-                    // ── STEP 1: Collect user info ──────────────────
+
                     System.out.print("\nEnter your first name: ");
                     String firstname = scanner.nextLine();
                     while (firstname.isEmpty() || firstname.length() < 3 || firstname.length() > 12) {
@@ -130,7 +130,7 @@ public class Main {
                         phoneNumber = scanner.nextLine();
                     }
 
-                    // ── STEP 2: Build User object ──────────────────
+
                     User user = new User();
                     user.setFirstname(firstname);
                     user.setLastname(lastname);
@@ -166,7 +166,7 @@ public class Main {
                     }
                     System.out.println("\n========================================");
 
-                    // ── STEP 4: Pick event ─────────────────────────
+
                     System.out.print("\nChoose an event (1-" + events.size() + "): ");
                     int choice = 0;
                     while (true) {
@@ -182,7 +182,7 @@ public class Main {
 
                     Event selectedEvent = events.get(choice - 1);
 
-                    // ── STEP 5: Pick tickets ───────────────────────
+
                     System.out.print("How many tickets? ");
                     int tickets = 0;
                     while (true) {
@@ -202,7 +202,7 @@ public class Main {
                         }
                     }
 
-                    // ── STEP 6: Create booking and show confirmation
+
                     Booking booking = new Booking(user, selectedEvent, tickets);
                     selectedEvent.setAvailableTickets(selectedEvent.getAvailableTickets() - tickets);
                     System.out.println(booking);
@@ -220,12 +220,10 @@ public class Main {
                         System.out.println("\nThank you for using Event Planner. Goodbye!");
                         running = false; // stops the main loop and exits
                     }
-                    // if "yes" — loop naturally cycles back to menu
+
                 }
 
-                // ══════════════════════════════════════════════════
-                // MODE 2 — Upload a New Event
-                // ══════════════════════════════════════════════════
+
                 case 2 -> {
 
                     System.out.println("\n========================================");
@@ -250,7 +248,7 @@ public class Main {
                         eventLocation = scanner.nextLine();
                     }
 
-                    // ── Event Date ─────────────────────────────────
+
                     LocalDate eventDate = null;
                     while (eventDate == null) {
                         System.out.print("Enter event date (YYYY-MM-DD): ");
@@ -278,7 +276,7 @@ public class Main {
                         }
                     }
 
-                    // ── Ticket Price ───────────────────────────────
+
                     double ticketPrice = 0;
                     while (true) {
                         System.out.print("Enter ticket price (₦): ");
@@ -294,7 +292,7 @@ public class Main {
                         }
                     }
 
-                    // ── Available Tickets ──────────────────────────
+
                     int availableTickets = 0;
                     while (true) {
                         System.out.print("Enter total number of tickets available: ");
@@ -326,7 +324,7 @@ public class Main {
                     System.out.println("  Tickets  : " + availableTickets);
                     System.out.println("========================================");
 
-                    // ── Ask to return to main menu ─────────────────
+
                     System.out.print("\nWould you like to go back to the main menu? (yes / no): ");
                     String returnChoice = scanner.nextLine().trim().toLowerCase();
 
@@ -341,9 +339,7 @@ public class Main {
                     }
                 }
 
-                // ══════════════════════════════════════════════════
-                // MODE 3 — Exit
-                // ══════════════════════════════════════════════════
+
                 case 3 -> {
                     System.out.println("\nThank you for using Event Planner. Goodbye!");
                     running = false;
