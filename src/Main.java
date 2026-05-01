@@ -147,7 +147,7 @@ public class Main {
                     System.out.println("\nPress ENTER to view available events...");
                     scanner.nextLine();
 
-                    // ── STEP 3: Display events ─────────────────────
+
                     if (events.isEmpty()) {
                         System.out.println("No events available at the moment. Check back later!");
                         break;
@@ -207,7 +207,7 @@ public class Main {
                     selectedEvent.setAvailableTickets(selectedEvent.getAvailableTickets() - tickets);
                     System.out.println(booking);
 
-                    // ── STEP 7: Ask to return to main menu ────────
+
                     System.out.print("\nWould you like to go back to the main menu? (yes / no): ");
                     String returnChoice = scanner.nextLine().trim().toLowerCase();
 
